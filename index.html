@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CDSS Fenotipos EHI</title>
+<meta name="description" content="Diagnóstico y manejo de los fenotipos hemodinámicos en la encefalopatía hipóxico-isquémica (Surak et al., J Perinatol 2025).">
+<meta name="theme-color" content="#B5523B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Fenotipos EHI">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6EFE6; --card:#FFFDF9; --card2:#F1E6D9; --ink:#2B1D17; --muted:#76665C; --line:#E3D5C6;
+  --terra:#B5523B; --terra-ink:#FFFFFF; --terra-soft:#F4DCD3;
+  --ok:#2F7A5B; --ok-soft:#DCEFE5; --warn:#B7791F; --warn-soft:#F8EBD3; --bad:#B3263A; --bad-soft:#F7DADD;
+  --p1:#2E5E8C; --p2:#B3263A; --p3:#C98418; --p4:#7A3E65; --p5:#2A7F78; --p6:#3B2F55; --p0:#76665C;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#17110F; --card:#221A17; --card2:#2C221E; --ink:#F3E9DF; --muted:#B7A79B; --line:#3A2E29;
+    --terra:#E07A5F; --terra-ink:#1A100D; --terra-soft:#3D2620;
+    --ok:#6CC59B; --ok-soft:#1E3329; --warn:#E6B45E; --warn-soft:#3A2E17; --bad:#F07A86; --bad-soft:#3D1E22;
+    --p1:#7FB0E0; --p2:#F07A86; --p3:#E6B45E; --p4:#C996BA; --p5:#6CC5BC; --p6:#A99BD6; --p0:#B7A79B;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.45}
+body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+header{padding:calc(14px + env(safe-area-inset-top)) 16px 10px;background:var(--bg)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .logo{width:36px;height:36px;border-radius:10px;background:var(--terra);display:grid;place-items:center;flex:none}
+.brand h1{font-family:var(--serif);font-size:21px;margin:0;line-height:1.1;font-weight:700}
+.brand small{display:block;color:var(--muted);font-size:12px;font-family:var(--sans);font-weight:500}
+.net{margin-left:auto;font-size:11px;font-family:var(--mono);padding:3px 8px;border-radius:99px;background:var(--card2);color:var(--muted);white-space:nowrap}
+.net.on{background:var(--ok-soft);color:var(--ok)}
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:8px 16px 10px;border-bottom:1px solid var(--line);scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 13px var(--sans);padding:8px 12px;border-radius:99px;cursor:pointer}
+nav.tabs button .n{font-family:var(--mono);color:var(--muted);margin-right:4px}
+nav.tabs button.act{background:var(--terra);border-color:var(--terra);color:var(--terra-ink)}
+nav.tabs button.act .n{color:var(--terra-ink);opacity:.8}
+main{max-width:760px;margin:0 auto;padding:14px 16px}
+section.step{display:none}
+section.step.act{display:block}
+h2{font-family:var(--serif);font-size:24px;margin:6px 0 4px;font-weight:700}
+.lead{color:var(--muted);margin:0 0 14px;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.card h3{margin:0 0 10px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.card h3 .tag{font:600 10px var(--mono);letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-left:auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid.g3{grid-template-columns:1fr 1fr 1fr}
+@media (max-width:420px){.grid.g3{grid-template-columns:1fr 1fr}}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:600;color:var(--muted)}
+label.f .u{font-weight:500;font-family:var(--mono);font-size:11px}
+input[type=number],input[type=text],select{width:100%;font:500 17px var(--mono);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 10px;-webkit-appearance:none;appearance:none}
+select{font:500 15px var(--sans);background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 16px) 52%,calc(100% - 11px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:28px}
+input:focus,select:focus{outline:2px solid var(--terra);outline-offset:1px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{flex:1 1 auto;min-width:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:600 13px var(--sans);padding:9px 8px;border-radius:10px;cursor:pointer}
+.seg button.on{background:var(--terra);color:var(--terra-ink);border-color:var(--terra)}
+.seglab{font-size:12.5px;font-weight:600;color:var(--muted);margin:10px 0 6px}
+.seglab:first-child{margin-top:0}
+.out{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pill{border-radius:10px;padding:8px 10px;background:var(--card2);font-size:12px;color:var(--muted);flex:1 1 140px}
+.pill b{display:block;font:700 19px var(--mono);color:var(--ink)}
+.pill.ok{background:var(--ok-soft)} .pill.ok b{color:var(--ok)}
+.pill.warn{background:var(--warn-soft)} .pill.warn b{color:var(--warn)}
+.pill.bad{background:var(--bad-soft)} .pill.bad b{color:var(--bad)}
+.note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.alert{border-radius:12px;padding:10px 12px;margin:8px 0;font-size:13.5px;display:flex;gap:10px;align-items:flex-start}
+.alert .i{font:700 13px var(--mono);flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center}
+.alert.bad{background:var(--bad-soft)} .alert.bad .i{background:var(--bad);color:var(--card)}
+.alert.warn{background:var(--warn-soft)} .alert.warn .i{background:var(--warn);color:var(--card)}
+.alert.ok{background:var(--ok-soft)} .alert.ok .i{background:var(--ok);color:var(--card)}
+.alert.info{background:var(--card2)} .alert.info .i{background:var(--muted);color:var(--card)}
+.ph{border-radius:var(--r);padding:16px;color:#fff;margin-bottom:12px}
+.ph .k{font:700 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.ph h3{font-family:var(--serif);font-size:22px;margin:4px 0 6px;line-height:1.15}
+.ph p{margin:0;font-size:14px;opacity:.95}
+.cand{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.cand:first-of-type{border-top:0}
+.cand .dot{width:28px;height:28px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font:700 13px var(--mono)}
+.cand .body{flex:1;min-width:0}
+.cand .t{font-weight:700;font-size:14.5px;display:flex;justify-content:space-between;gap:8px}
+.cand .t span{font:700 13px var(--mono);color:var(--muted)}
+.bar{height:6px;border-radius:6px;background:var(--card2);margin:6px 0;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:6px}
+.crit{font-size:12.5px;color:var(--muted);margin:0;padding:0;list-style:none}
+.crit li{padding:1px 0}
+.crit li.y::before{content:"✓ ";color:var(--ok);font-weight:700}
+.crit li.n::before{content:"✗ ";color:var(--bad);font-weight:700}
+.crit li.q::before{content:"? ";color:var(--warn);font-weight:700}
+ol.iv{margin:0;padding-left:22px}
+ol.iv li{margin:6px 0;font-size:14.5px}
+ol.iv li small{display:block;color:var(--muted);font-size:12.5px}
+.drug{border-top:1px solid var(--line);padding:12px 0}
+.drug:first-of-type{border-top:0;padding-top:0}
+.drug .hd{display:flex;align-items:center;gap:8px;font-weight:700}
+.drug .hd .rng{margin-left:auto;font:600 11.5px var(--mono);color:var(--muted)}
+.chip{font:700 10px var(--mono);padding:2px 6px;border-radius:6px;text-transform:uppercase;letter-spacing:.04em}
+.chip.rec{background:var(--ok-soft);color:var(--ok)}
+.chip.cau{background:var(--warn-soft);color:var(--warn)}
+.chip.av{background:var(--bad-soft);color:var(--bad)}
+.res{font:700 22px var(--mono);color:var(--terra)}
+.res small{font:500 12px var(--sans);color:var(--muted)}
+table.ref{width:100%;border-collapse:collapse;font-size:13px}
+table.ref td,table.ref th{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+table.ref th{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin-bottom:10px}
+details summary{font-weight:700;cursor:pointer;font-size:14.5px}
+details p,details li{font-size:13.5px}
+.foot{font-size:12px;color:var(--muted);text-align:center;margin:22px 0 6px}
+.pager{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--line);display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.pager button{flex:1;font:700 15px var(--sans);padding:13px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.pager button.pri{background:var(--terra);border-color:var(--terra);color:var(--terra-ink)}
+.pager button:disabled{opacity:.4}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{font:600 13.5px var(--sans);padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--terra);color:var(--terra-ink);border-color:var(--terra)}
+pre.sum{white-space:pre-wrap;font:500 12.5px var(--mono);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;margin:10px 0 0;max-height:320px;overflow:auto}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:99px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:40}
+.toast.show{opacity:1}
+.disc{font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:10px 12px;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12h4l2-3 3 6 2-3h6"/></svg>
+    </div>
+    <div><h1>Fenotipos EHI</h1><small>Hemodinamia en encefalopatía hipóxico-isquémica</small></div>
+    <span class="net" id="net">offline</span>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="Pasos"></nav>
+
+<main>
+
+<!-- ============ 1 CLÍNICA ============ -->
+<section class="step" data-t="Clínica">
+  <h2>Contexto clínico</h2>
+  <p class="lead">Los signos clínicos orientan pero no definen el fenotipo. Todos los cálculos se hacen en el teléfono, sin conexión.</p>
+
+  <div class="card">
+    <h3>Paciente <span class="tag">Base</span></h3>
+    <div class="grid g3">
+      <label class="f">Peso <span class="u">kg</span><input type="number" inputmode="decimal" id="peso" step="0.01" placeholder="3.2"></label>
+      <label class="f">Horas de vida <span class="u">h</span><input type="number" inputmode="decimal" id="horas" placeholder="18"></label>
+      <label class="f">EG <span class="u">semanas</span><input type="number" inputmode="decimal" id="eg" placeholder="39"></label>
+    </div>
+    <div class="seglab">Fase térmica</div>
+    <div class="seg" data-k="fase"><button data-v="hipo">Hipotermia</button><button data-v="recal">Recalentamiento</button><button data-v="normo">Normotermia</button></div>
+    <div class="seglab">Encefalopatía (Sarnat)</div>
+    <div class="seg" data-k="sarnat"><button data-v="leve">Leve</button><button data-v="mod">Moderada</button><button data-v="grave">Grave</button></div>
+  </div>
+
+  <div class="card">
+    <h3>Circulación <span class="tag">Signos</span></h3>
+    <div class="grid g3">
+      <label class="f">PAS <span class="u">mmHg</span><input type="number" inputmode="decimal" id="pas"></label>
+      <label class="f">PAD <span class="u">mmHg</span><input type="number" inputmode="decimal" id="pad"></label>
+      <label class="f">PAM medida <span class="u">mmHg (opc.)</span><input type="number" inputmode="decimal" id="pamm"></label>
+      <label class="f">FC <span class="u">lpm</span><input type="number" inputmode="decimal" id="fc"></label>
+      <label class="f">Diuresis <span class="u">mL/kg/h</span><input type="number" inputmode="decimal" id="diur" step="0.1"></label>
+      <label class="f">Lactato <span class="u">mmol/L</span><input type="number" inputmode="decimal" id="lact" step="0.1"></label>
+      <label class="f">Creatinina <span class="u">mg/dL (opc.)</span><input type="number" inputmode="decimal" id="creat" step="0.01"></label>
+    </div>
+    <div class="out" id="outCirc"></div>
+  </div>
+
+  <div class="card">
+    <h3>Oxigenación <span class="tag">IO · ISO</span></h3>
+    <div class="grid g3">
+      <label class="f">SpO₂ preductal <span class="u">%</span><input type="number" inputmode="decimal" id="spopre"></label>
+      <label class="f">SpO₂ posductal <span class="u">%</span><input type="number" inputmode="decimal" id="spopost"></label>
+      <label class="f">FiO₂ <span class="u">%</span><input type="number" inputmode="decimal" id="fio2"></label>
+      <label class="f">Presión media vía aérea <span class="u">cmH₂O</span><input type="number" inputmode="decimal" id="map" step="0.5"></label>
+      <label class="f">PaO₂ <span class="u">mmHg (opc.)</span><input type="number" inputmode="decimal" id="pao2"></label>
+    </div>
+    <div class="out" id="outOx"></div>
+  </div>
+
+  <div class="card">
+    <h3>Soporte actual <span class="tag">Marque</span></h3>
+    <div class="seg multi" data-k="soporte">
+      <button data-v="dopa">Dopamina</button><button data-v="dobu">Dobutamina</button><button data-v="epi">Epinefrina</button>
+      <button data-v="nor">Noradrenalina</button><button data-v="vaso">Vasopresina</button><button data-v="mil">Milrinona</button>
+      <button data-v="ino">iNO</button><button data-v="pge">PGE₁</button><button data-v="hc">Hidrocortisona</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 ECO ============ -->
+<section class="step" data-t="Eco">
+  <h2>Ecocardiografía dirigida</h2>
+  <p class="lead">Lo que define el fenotipo: ventrículo derecho, ventrículo izquierdo, ductus y signos de hipertensión pulmonar.</p>
+
+  <div class="card">
+    <h3>Ventrículo derecho <span class="tag">TAPSE · FAC</span></h3>
+    <div class="grid g3">
+      <label class="f">TAPSE <span class="u">mm</span><input type="number" inputmode="decimal" id="tapse" step="0.1"></label>
+      <label class="f">Área diastólica VD <span class="u">cm²</span><input type="number" inputmode="decimal" id="edaVD" step="0.01"></label>
+      <label class="f">Área sistólica VD <span class="u">cm²</span><input type="number" inputmode="decimal" id="esaVD" step="0.01"></label>
+      <label class="f">o FAC directa <span class="u">%</span><input type="number" inputmode="decimal" id="facd" step="0.1"></label>
+    </div>
+    <div class="seglab">Si no tiene medidas: impresión cualitativa del VD</div>
+    <div class="seg" data-k="vdq"><button data-v="normal">Normal</button><button data-v="leve">Leve ↓</button><button data-v="sig">Moderada-grave ↓</button></div>
+    <div class="seglab">Hipertrofia significativa del VD</div>
+    <div class="seg" data-k="hvd"><button data-v="no">No</button><button data-v="si">Sí</button></div>
+    <div class="out" id="outVD"></div>
+    <p class="note">FAC = (área diastólica − área sistólica) ÷ área diastólica × 100. Vista apical 4 cámaras enfocada en el VD; trabéculas dentro de la cavidad; promedie 3 latidos. No use Simpson en el VD.</p>
+  </div>
+
+  <div class="card">
+    <h3>Ventrículo izquierdo <span class="tag">FE · GVI</span></h3>
+    <div class="grid g3">
+      <label class="f">FE Simpson <span class="u">%</span><input type="number" inputmode="decimal" id="fe"></label>
+      <label class="f">Diámetro TSVI <span class="u">mm</span><input type="number" inputmode="decimal" id="tsvi" step="0.1"></label>
+      <label class="f">VTI aórtica <span class="u">cm</span><input type="number" inputmode="decimal" id="vti" step="0.1"></label>
+      <label class="f">o GVI directo <span class="u">mL/kg/min</span><input type="number" inputmode="decimal" id="gvid"></label>
+    </div>
+    <div class="seglab">Si no tiene medidas: impresión cualitativa del VI</div>
+    <div class="seg" data-k="viq"><button data-v="normal">Normal</button><button data-v="leve">Leve ↓</button><button data-v="sig">Moderada-grave ↓</button></div>
+    <div class="seglab">Aurícula izquierda dilatada / congestión venosa pulmonar</div>
+    <div class="seg" data-k="ai"><button data-v="no">No</button><button data-v="si">Sí</button></div>
+    <div class="out" id="outVI"></div>
+    <p class="note">GVI = π × (TSVI/2)² × VTI × FC ÷ peso. Usa la FC del paso 1.</p>
+  </div>
+
+  <div class="card">
+    <h3>Ductus, foramen y presión pulmonar <span class="tag">Cortocircuitos</span></h3>
+    <div class="seglab">Ductus arterioso</div>
+    <div class="seg" data-k="da"><button data-v="nr">Abierto no restrictivo</button><button data-v="r">Restrictivo</button><button data-v="c">Cerrado</button></div>
+    <div class="seglab">Dirección del flujo ductal</div>
+    <div class="seg" data-k="dadir"><button data-v="id">Izq → Der</button><button data-v="bi">Bidireccional</button><button data-v="di">Der → Izq</button></div>
+    <div class="seglab">Foramen oval / comunicación auricular</div>
+    <div class="seg" data-k="fo"><button data-v="id">Izq → Der</button><button data-v="bi">Bidireccional</button><button data-v="di">Der → Izq</button></div>
+    <div class="seglab">Septum interventricular en sístole</div>
+    <div class="seg" data-k="septo"><button data-v="red">Redondo</button><button data-v="apl">Aplanado</button><button data-v="abo">Abombado hacia VI</button></div>
+    <div class="seglab">Flujo anterógrado por la válvula pulmonar</div>
+    <div class="seg" data-k="fap"><button data-v="si">Presente</button><button data-v="no">Ausente o mínimo</button></div>
+    <div class="grid" style="margin-top:10px">
+      <label class="f">Vel. pico de IT <span class="u">m/s</span><input type="number" inputmode="decimal" id="vit" step="0.01"></label>
+      <label class="f">Presión AD asumida <span class="u">mmHg</span><input type="number" inputmode="decimal" id="pad_ad" value="5"></label>
+    </div>
+    <div class="out" id="outHP"></div>
+  </div>
+</section>
+
+<!-- ============ 3 FENOTIPO ============ -->
+<section class="step" data-t="Fenotipo">
+  <h2>Fenotipo hemodinámico</h2>
+  <p class="lead">Clasificación según la Figura 2 de Surak et al. Se muestran todos los candidatos: los tipos combinados son frecuentes.</p>
+  <div id="phMain"></div>
+  <div class="card"><h3>Ejes fisiológicos <span class="tag">Motor</span></h3><div class="out" id="axes" style="margin-top:0"></div></div>
+  <div class="card"><h3>Todos los candidatos <span class="tag">Diferencial</span></h3><div id="cands"></div></div>
+  <div id="ctxAlerts"></div>
+</section>
+
+<!-- ============ 4 MANEJO ============ -->
+<section class="step" data-t="Manejo">
+  <h2>Manejo dirigido</h2>
+  <p class="lead">Intervenciones de la Figura 2 para el fenotipo seleccionado, filtradas por las alertas de este paciente.</p>
+  <div class="card">
+    <h3>Fenotipo a tratar</h3>
+    <select id="phSel"></select>
+    <p class="note" id="phSelNote"></p>
+  </div>
+  <div class="card"><h3 id="ivTitle">Intervenciones</h3><ol class="iv" id="ivList"></ol></div>
+  <div id="mgAlerts"></div>
+  <div class="card">
+    <h3>Administración prudente de inotrópicos <span class="tag">Stewardship</span></h3>
+    <ol class="iv">
+      <li>Dosis mínima eficaz<small>Dobutamina 2,5–7,5 mcg/kg/min o epinefrina &lt; 0,04 mcg/kg/min apoyan ambos ventrículos sin subir bruscamente la PAM.</small></li>
+      <li>Duración limitada<small>Reevaluar a diario la necesidad del fármaco; destetar en cuanto la eco lo permita.</small></li>
+      <li>Metas individualizadas<small>Tratar el fenotipo, no una cifra aislada de PA. Los picos de PA llegan a un cerebro sin autorregulación.</small></li>
+      <li>Evitar la escalada refleja con dopamina<small>Puede aumentar la RVP y la relación presión pulmonar/sistémica; asociada a peor desenlace en cohortes pequeñas.</small></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 5 FÁRMACOS ============ -->
+<section class="step" data-t="Fármacos">
+  <h2>Calculadora de infusiones</h2>
+  <p class="lead">Concentraciones editables: use las de su farmacia. Las marcas de color siguen al fenotipo seleccionado.</p>
+  <div class="card" id="drugs"></div>
+  <div class="card">
+    <h3>Hidrocortisona <span class="tag">Dosis acumulada</span></h3>
+    <div class="grid">
+      <label class="f">Dosis <span class="u">mg/kg cada 6 h</span><input type="number" inputmode="decimal" id="hcDose" value="0.5" step="0.1"></label>
+      <label class="f">Dosis ya administradas <span class="u">n.º</span><input type="number" inputmode="numeric" id="hcN" value="0"></label>
+    </div>
+    <div class="out" id="outHC"></div>
+    <p class="note">Esquema del ensayo CORTISoL: 0,5 mg/kg IV cada 6 h. En su seguimiento (extended-CORTISoL, J Perinatol 2025), cada mg/kg acumulado se asoció a peor desenlace cognitivo (OR ≈ 1,16); corte ROC 5,6 mg/kg.</p>
+  </div>
+  <div class="disc">Los rangos de dobutamina y epinefrina provienen de Surak et al. 2025. Los demás son rangos neonatales habituales de referencia, no del artículo: verifique contra su protocolo y su formulario institucional antes de prescribir.</div>
+</section>
+
+<!-- ============ 6 RESUMEN ============ -->
+<section class="step" data-t="Resumen">
+  <h2>Resumen y reevaluación</h2>
+  <p class="lead">Texto listo para la nota de evolución, y lo que hay que volver a mirar.</p>
+  <div class="card">
+    <h3>Nota de evolución</h3>
+    <pre class="sum" id="sumTxt"></pre>
+    <div class="btnrow"><button class="btn pri" id="btnCopy">Copiar</button><button class="btn" id="btnReset">Nuevo caso</button></div>
+  </div>
+  <div class="card">
+    <h3>Cuándo reevaluar <span class="tag">Curso temporal</span></h3>
+    <ol class="iv">
+      <li>A las 24 h de vida<small>La función del VD toca fondo hacia las 24 h y se recupera hacia las 96 h.</small></li>
+      <li>Ante cada cambio de fármaco o de dosis<small>Nueva eco dirigida para confirmar el efecto sobre el ventrículo que falla.</small></li>
+      <li>Al recalentar<small>Cae la RVS, sube la FC y baja la RVP. Un gasto cardíaco alto en esta fase se asocia a RM anormal: no perseguir flujos altos.</small></li>
+      <li>Si aparecen picos de hipertensión<small>Con autorregulación alterada, la hipertensión daña tanto como la hipotensión.</small></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 7 EVIDENCIA ============ -->
+<section class="step" data-t="Evidencia">
+  <h2>Evidencia y límites</h2>
+  <p class="lead">Base de la herramienta y lo que todavía no sabemos.</p>
+  <details open><summary>Umbrales usados por el motor</summary>
+    <table class="ref">
+      <tr><th>Parámetro</th><th>Corte</th><th>Origen</th></tr>
+      <tr><td>TAPSE</td><td>&lt; 6 mm = disfunción significativa</td><td>Giesinger 2019 (muerte o RM anormal: S 78 %, E 81 %, AUC 0,83)</td></tr>
+      <tr><td>FAC del VD</td><td>&lt; 29 % = significativa; 29–35 % = leve</td><td>Giesinger 2019 (S 83 %, E 84 %, AUC 0,88); 35 % es el límite adulto</td></tr>
+      <tr><td>FE del VI</td><td>&lt; 45 % significativa; 45–54 % leve</td><td>Convención de eco funcional; no del artículo</td></tr>
+      <tr><td>GVI</td><td>&lt; 150 mL/kg/min bajo</td><td>Rango neonatal habitual 150–300; no del artículo</td></tr>
+      <tr><td>PSAP/PAS</td><td>≥ 0,67 HP; ≥ 1 suprasistémica</td><td>Convención de eco funcional</td></tr>
+      <tr><td>SpO₂ pre − post</td><td>≥ 5 puntos</td><td>Convención clínica; ausente si el DA está cerrado</td></tr>
+      <tr><td>PAM</td><td>≥ 50 mmHg</td><td>Lee 2017: mejor autorregulación por NIRS. Observacional, no meta validada</td></tr>
+    </table>
+  </details>
+  <details><summary>Novedades incorporadas tras el artículo</summary>
+    <p><b>extended-CORTISoL (J Perinatol 2025;45:1788–94).</b> Seguimiento a ~20 meses de un ECA unicéntrico (n = 55): hidrocortisona 0,5 mg/kg/6 h vs placebo en neonatos enfriados con hipotensión tratada con dopamina. Muerte o Bayley-II &lt; 70: 40 % vs 18 % (p = 0,13, no significativo). Mayor dosis acumulada se asoció a peor índice cognitivo (OR 1,16 por mg/kg; corte 5,6 mg/kg). El grupo tratado necesitó menos días de inotrópico y menor dosis pico de dopamina. Limitado por tamaño y rescate abierto con hidrocortisona en 16 pacientes.</p>
+    <p>Consecuencia en esta herramienta: la hidrocortisona aparece como opción para hipotensión refractaria, con dosis mínima, duración corta y alerta de dosis acumulada, en lugar de recomendación sistemática.</p>
+  </details>
+  <details><summary>Lectura crítica</summary>
+    <ul>
+      <li>La Figura 2 es opinión experta; ningún ensayo ha probado el manejo por fenotipos en EHI.</li>
+      <li>La evidencia contra la dopamina es observacional y con sesgo de indicación (se da a los más graves).</li>
+      <li>El índice de resistencia cerebral pierde valor pronóstico durante la hipotermia (Skranes 2014).</li>
+      <li>La recomendación de la AAP sobre hidrocortisona que cita el artículo (Goldsmith 2022) se refiere a prematuros de muy bajo peso, no a la EHI.</li>
+      <li>Los cortes de TAPSE y FAC predicen desenlace; no fueron diseñados como umbrales de tratamiento.</li>
+    </ul>
+  </details>
+  <details><summary>Referencias</summary>
+    <ol style="padding-left:18px;margin:0">
+      <li>Surak A, Schmölzer GM, McNamara PJ, Ting JY, Alshareef M, Mohammad K. Hemodynamics in infants with hypoxemic ischemic encephalopathy: pathophysiology and beyond. J Perinatol. 2025. doi:10.1038/s41372-025-02516-6</li>
+      <li>Kovacs K, Szakmar E, Meder U, et al. A randomized controlled study of low-dose hydrocortisone versus placebo in dopamine-treated hypotensive neonates undergoing hypothermia treatment for hypoxic-ischemic encephalopathy. J Pediatr. 2019;211:13–19.</li>
+      <li>Neurodevelopmental outcome in infants with neonatal encephalopathy receiving hydrocortisone during therapeutic hypothermia: follow-up of the extended-CORTISoL trial. J Perinatol. 2025;45(12):1788–1794.</li>
+      <li>Giesinger RE, El Shahed AI, Castaldo MP, et al. Impaired right ventricular performance is associated with adverse outcome after hypoxic ischemic encephalopathy. Am J Respir Crit Care Med. 2019;200:1294–1305.</li>
+      <li>Kovacs K, Giesinger RE, Lakatos A, et al. The evidence for and against inotropic and vasoactive support in neonatal encephalopathy and therapeutic hypothermia. J Perinatol (2022), según cita de Surak et al.</li>
+      <li>Lee JK, Poretti A, Perin J, et al. Optimizing cerebral autoregulation may decrease neonatal regional hypoxic-ischemic brain injury. Dev Neurosci. 2017;39:248–256.</li>
+    </ol>
+  </details>
+  <div class="disc">Herramienta de apoyo a la decisión. No sustituye el juicio clínico, la ecocardiografía completa ni la valoración por cardiología pediátrica cuando hay sospecha de cardiopatía estructural.</div>
+  <p class="foot">Dr. Jano Jaramillo — Médico Pediatra y Neonatólogo · Posgrado en Trastornos del Aprendizaje<br>Sala de Neonatología · Hospital Dr. Cecilio Castillero · Chitré<br><span style="font-family:var(--mono)">v1.0 · 2026-10</span></p>
+</section>
+
+</main>
+
+<div class="pager"><button id="prev">Anterior</button><button id="next" class="pri">Siguiente</button></div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+/* ---------------- estado ---------------- */
+const S = { fase:null, sarnat:null, soporte:[], vdq:null, hvd:null, viq:null, ai:null, da:null, dadir:null, fo:null, septo:null, fap:null, phSel:null };
+const $ = id => document.getElementById(id);
+const num = id => { const el=$(id); if(!el) return null; const v=parseFloat(String(el.value).replace(",", ".")); return isFinite(v)?v:null; };
+const fmt = (v,d=1) => v==null||!isFinite(v) ? "—" : v.toFixed(d).replace(".", ",");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const NUM_IDS = ["peso","horas","eg","pas","pad","pamm","fc","diur","lact","creat","spopre","spopost","fio2","map","pao2","tapse","edaVD","esaVD","facd","fe","tsvi","vti","gvid","vit","pad_ad","hcDose","hcN"];
+
+/* ---------------- pasos ---------------- */
+const steps = [...document.querySelectorAll("section.step")];
+let cur = 0;
+const tabs = $("tabs");
+steps.forEach((s,i)=>{ const b=document.createElement("button"); b.innerHTML=`<span class="n">${i+1}</span>${s.dataset.t}`; b.onclick=()=>go(i); tabs.appendChild(b); });
+function go(i){
+  cur=Math.max(0,Math.min(steps.length-1,i));
+  steps.forEach((s,j)=>s.classList.toggle("act",j===cur));
+  [...tabs.children].forEach((b,j)=>b.classList.toggle("act",j===cur));
+  tabs.children[cur].scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
+  $("prev").disabled = cur===0;
+  $("next").textContent = cur===steps.length-1 ? "Inicio" : "Siguiente";
+  window.scrollTo({top:0});
+  render();
+}
+$("prev").onclick=()=>go(cur-1);
+$("next").onclick=()=>go(cur===steps.length-1?0:cur+1);
+
+/* ---------------- segmentados ---------------- */
+document.querySelectorAll(".seg").forEach(g=>{
+  const k=g.dataset.k, multi=g.classList.contains("multi");
+  g.querySelectorAll("button").forEach(b=>{
+    b.onclick=()=>{
+      const v=b.dataset.v;
+      if(multi){ const a=S[k]; const ix=a.indexOf(v); ix>=0?a.splice(ix,1):a.push(v); }
+      else S[k] = S[k]===v ? null : v;
+      if(k!=="phSel" && !multi) S.phSel=null;
+      syncSeg(); render(); save();
+    };
+  });
+});
+function syncSeg(){
+  document.querySelectorAll(".seg").forEach(g=>{
+    const k=g.dataset.k, val=S[k];
+    g.querySelectorAll("button").forEach(b=>b.classList.toggle("on", Array.isArray(val)?val.includes(b.dataset.v):val===b.dataset.v));
+  });
+}
+NUM_IDS.forEach(id=>{ const el=$(id); if(el) el.addEventListener("input",()=>{ render(); save(); }); });
+
+/* ---------------- cálculos ---------------- */
+function calc(){
+  const c={};
+  c.peso=num("peso"); c.fc=num("fc");
+  const pas=num("pas"), pad=num("pad");
+  c.pas=pas; c.pad=pad;
+  c.pam = num("pamm") ?? (pas!=null&&pad!=null ? pad+(pas-pad)/3 : null);
+  c.eg=num("eg");
+  c.diur=num("diur"); c.lact=num("lact"); c.creat=num("creat");
+  const pre=num("spopre"), post=num("spopost"), fio2=num("fio2"), map=num("map"), pao2=num("pao2");
+  c.pre=pre; c.post=post; c.fio2=fio2;
+  c.dSat = pre!=null&&post!=null ? pre-post : null;
+  c.oi = map!=null&&fio2!=null&&pao2 ? map*fio2/pao2 : null;
+  c.osi = map!=null&&fio2!=null&&pre ? map*fio2/pre : null;
+  // VD
+  c.tapse=num("tapse");
+  const eda=num("edaVD"), esa=num("esaVD");
+  c.fac = (eda&&esa!=null&&eda>esa) ? (eda-esa)/eda*100 : num("facd");
+  // VI
+  c.fe=num("fe");
+  const d=num("tsvi"), vti=num("vti");
+  c.gvi = (d&&vti&&c.fc&&c.peso) ? Math.PI*Math.pow(d/20,2)*vti*c.fc/c.peso : num("gvid");
+  // HP
+  const vit=num("vit"), pra=num("pad_ad") ?? 5;
+  c.psap = vit ? 4*vit*vit+pra : null;
+  c.ratio = (c.psap&&pas) ? c.psap/pas : null;
+  return c;
+}
+
+function axes(c){
+  const A={};
+  // VD
+  let vd=null, vdWhy=[];
+  if(c.tapse!=null){ vdWhy.push(`TAPSE ${fmt(c.tapse)} mm`); vd = c.tapse<6?"sig":(c.tapse<8?"leve":"normal"); }
+  if(c.fac!=null){ vdWhy.push(`FAC ${fmt(c.fac,0)} %`); const f = c.fac<29?"sig":(c.fac<35?"leve":"normal"); vd = worst(vd,f); }
+  if(vd==null && S.vdq){ vd=S.vdq; vdWhy.push("impresión cualitativa"); }
+  A.vd=vd; A.vdWhy=vdWhy.join(" · ");
+  // VI
+  let vi=null, viWhy=[];
+  if(c.fe!=null){ viWhy.push(`FE ${fmt(c.fe,0)} %`); vi = c.fe<45?"sig":(c.fe<55?"leve":"normal"); }
+  if(c.gvi!=null){ viWhy.push(`GVI ${fmt(c.gvi,0)}`); if(c.gvi<150) vi=worst(vi,"sig"); else vi=worst(vi,"normal"); }
+  if(vi==null && S.viq){ vi=S.viq; viWhy.push("impresión cualitativa"); }
+  A.vi=vi; A.viWhy=viWhy.join(" · ");
+  // HP
+  let hp=0, hpWhy=[], hpData=0;
+  if(S.dadir){ hpData++; if(S.dadir==="di"){hp+=2;hpWhy.push("DA der→izq");} else if(S.dadir==="bi"){hp+=1;hpWhy.push("DA bidireccional");} }
+  if(S.fo){ hpData++; if(S.fo==="di"){hp+=1;hpWhy.push("FO der→izq");} else if(S.fo==="bi"){hp+=0.5;hpWhy.push("FO bidireccional");} }
+  if(S.septo){ hpData++; if(S.septo==="abo"){hp+=2;hpWhy.push("septum abombado");} else if(S.septo==="apl"){hp+=1;hpWhy.push("septum aplanado");} }
+  if(c.ratio!=null){ hpData++; if(c.ratio>=1){hp+=2;hpWhy.push("PSAP ≥ sistémica");} else if(c.ratio>=0.67){hp+=1;hpWhy.push("PSAP ≥ 2/3 sistémica");} }
+  if(c.dSat!=null){ hpData++; if(c.dSat>=5){hp+=1;hpWhy.push(`SpO₂ pre−post ${fmt(c.dSat,0)}`);} }
+  A.hpScore=hp; A.hpData=hpData;
+  A.hp = hpData===0 ? null : (hp>=2 ? "si" : "no");
+  A.hpWhy = hpWhy.join(" · ");
+  // patrón de VI que explica el cortocircuito der→izq ductal (no HP primaria)
+  A.lvPattern = (vi==="sig") && S.fo==="id" && (S.dadir==="di"||S.dadir==="bi");
+  A.da=S.da; A.atresia = S.fap==="no";
+  A.hipo = c.pam!=null ? (c.eg ? c.pam < c.eg : c.pam<40) : null;
+  return A;
+}
+function worst(a,b){ const r={normal:0,leve:1,sig:2}; if(a==null) return b; if(b==null) return a; return r[a]>=r[b]?a:b; }
+
+/* ---------------- fenotipos (Figura 2) ---------------- */
+const PH = {
+  P1:{n:1,col:"--p1",name:"HP aguda con función preservada y ductus no restrictivo",short:"HP + función preservada, DA no restrictivo",
+      desc:"La HP domina; el VD aguanta porque el ductus actúa como válvula de escape.",
+      iv:[
+        ["Reclutamiento pulmonar","Surfactante, optimizar la presión media de vía aérea y buscar la CRF ideal."],
+        ["Sedoanalgesia","Puede estar indicada para bajar la RVP por estrés."],
+        ["SpO₂ preductal 90–95 %","Evitar hiperoxia e hipoxia."],
+        ["iNO","Para la falla respiratoria hipoxémica."],
+        ["Optimizar la relación RVS:RVP","Vasopresina o noradrenalina."],
+        ["PGE₁ si el ductus se vuelve restrictivo","Como válvula de escape del VD si hay falla del VD."],
+        ["Considerar hidrocortisona","Ver alerta de dosis acumulada (extended-CORTISoL 2025)."]
+      ]},
+  P2:{n:2,col:"--p2",name:"HP aguda con función deprimida y ductus restrictivo",short:"HP + función deprimida, DA restrictivo",
+      desc:"El VD falla contra una RVP alta y sin escape ductal: bajo gasto del VI por interdependencia.",
+      iv:[
+        ["Todo lo del fenotipo 1","Reclutamiento, sedoanalgesia, SpO₂ 90–95 %, iNO, RVS:RVP, PGE₁."],
+        ["Soporte inotrópico del VD","Dobutamina o epinefrina a dosis baja."],
+        ["Milrinona solo con cautela","Si hay buena diuresis y no hay hipotensión sistémica."]
+      ]},
+  P3:{n:3,col:"--p3",name:"HP aguda con ductus cerrado",short:"HP con DA cerrado",
+      desc:"Sin ductus no hay diferencia pre-posductal ni escape para el VD.",
+      iv:[
+        ["Considerar PGE₁ para reabrir el ductus","Poco útil si lleva cerrado mucho tiempo."],
+        ["iNO","Para bajar la RVP."],
+        ["Inotrópico para el VD","Dobutamina o epinefrina."],
+        ["Milrinona para relajar el VD","Solo si no está hipotenso y orina bien."],
+        ["Hipertrofia significativa del VD","Puede considerarse control de frecuencia (esmolol), con mucha cautela por depresión miocárdica; idealmente con cardiología."]
+      ]},
+  P4:{n:4,col:"--p4",name:"Atresia o estenosis pulmonar funcional",short:"Atresia/estenosis pulmonar funcional",
+      desc:"El VD no genera flujo anterógrado: el flujo pulmonar depende del ductus.",
+      iv:[
+        ["PGE₁ para dar flujo pulmonar","Sube la presión de AI por retorno venoso y reduce el cortocircuito auricular der→izq."],
+        ["Asegurar el llenado","Sobre todo si hay hipertrofia del VD."],
+        ["Inotrópico para el VD","Dobutamina o epinefrina."],
+        ["iNO","Para bajar la RVP."],
+        ["Hipertrofia significativa del VD","Asegurar llenado, evitar taquicardia (sedoanalgesia) y considerar control de frecuencia (esmolol)."]
+      ]},
+  P5:{n:5,col:"--p5",name:"Disfunción biventricular",short:"Disfunción biventricular",
+      desc:"Ambos ventrículos fallan; grados variables de disfunción del VD y del VI.",
+      iv:[
+        ["Inotrópico biventricular","Epinefrina o dobutamina."],
+        ["Hidrocortisona en casos seleccionados","Como apoyo suprarrenal; vigile la dosis acumulada."],
+        ["Si empeora","Considerar ECMO y, ocasionalmente, suspender la hipotermia."]
+      ]},
+  P6:{n:6,col:"--p6",name:"Disfunción del ventrículo izquierdo",short:"Disfunción del VI",
+      desc:"Gasto del VI muy bajo con AI de presión alta: el cortocircuito ductal der→izq puede ser lo que sostiene la circulación sistémica.",
+      iv:[
+        ["Inotrópico","Epinefrina o dobutamina; ocasionalmente milrinona, para optimizar el gasto."],
+        ["Evitar vasodilatadores pulmonares","El iNO puede empeorar el robo sistémico y la congestión venosa, sobre todo si el cortocircuito ductal der→izq sostiene el flujo sistémico."],
+        ["Mantener el ductus con PGE₁","Cuando la circulación sistémica depende del gasto del VD."],
+        ["Buscar otras causas","Por ejemplo, compromiso de arterias coronarias: valorar con cardiología."]
+      ]},
+  P0:{n:0,col:"--p0",name:"Sin fenotipo de la Figura 2",short:"Sin fenotipo dominante",
+      desc:"No hay HP ni disfunción ventricular significativa en los datos ingresados.",
+      iv:[
+        ["No tratar una cifra aislada de PA","Los signos clínicos engañan en la EHI y la hipotermia los modifica."],
+        ["Buscar causas no cardíacas de hipotensión","Hipovolemia, presión intratorácica alta, sobresedación, insuficiencia suprarrenal, hemorragia suprarrenal."],
+        ["Precarga","Bolo de volumen solo si la eco sugiere llenado bajo."],
+        ["Tono vascular bajo","Si la RVS parece baja con buena función, el artículo apunta a vasopresina o noradrenalina y a valorar hidrocortisona."],
+        ["Repetir la eco","Ante cualquier cambio clínico y al recalentar."]
+      ]}
+};
+
+function candidates(A){
+  const T = (cond) => cond===null||cond===undefined ? "q" : (cond?"y":"n");
+  const vdSig = A.vd==null?null:A.vd==="sig";
+  const viSig = A.vi==null?null:A.vi==="sig";
+  const hp = A.hp==null?null:A.hp==="si";
+  const da = A.da;
+  const L = {
+    P1:[["HP presente",T(hp),3],["VD sin disfunción significativa",T(vdSig==null?null:!vdSig),2],["VI sin disfunción significativa",T(viSig==null?null:!viSig),1],["Ductus abierto no restrictivo",T(da==null?null:da==="nr"),2]],
+    P2:[["HP presente",T(hp),3],["VD con disfunción significativa",T(vdSig),3],["Ductus restrictivo",T(da==null?null:da==="r"),2],["VI sin disfunción significativa",T(viSig==null?null:!viSig),1]],
+    P3:[["HP presente",T(hp),3],["Ductus cerrado",T(da==null?null:da==="c"),4]],
+    P4:[["Flujo anterógrado pulmonar ausente o mínimo",T(S.fap==null?null:S.fap==="no"),5],["VD con disfunción",T(A.vd==null?null:A.vd!=="normal"),2],["Ductus abierto",T(da==null?null:da!=="c"),1]],
+    P5:[["VD con disfunción significativa",T(vdSig),3],["VI con disfunción significativa",T(viSig),3]],
+    P6:[["VI con disfunción significativa",T(viSig),4],["VD sin disfunción significativa",T(vdSig==null?null:!vdSig),2],["FO izq→der (AI de presión alta)",T(S.fo==null?null:S.fo==="id"),1],["AI dilatada / congestión venosa",T(S.ai==null?null:S.ai==="si"),1]]
+  };
+  const req = {P1:[0,3],P2:[0,1],P3:[0,1],P4:[0],P5:[0,1],P6:[0]};
+  const out=[];
+  for(const k in L){
+    const crit=L[k]; let tot=0, got=0, unk=0, fail=false;
+    crit.forEach(([t,s,w],i)=>{ tot+=w; if(s==="y") got+=w; if(s==="q") unk+=w; if(s==="n" && req[k].includes(i)) fail=true; });
+    let score = fail?0:Math.round(got/tot*100);
+    out.push({k,score,crit,unk:Math.round(unk/tot*100),fail});
+  }
+  // si el patrón de VI explica el cortocircuito der→izq, castigar la HP primaria
+  if(A.lvPattern){ out.forEach(o=>{ if(["P1","P2","P3"].includes(o.k)) o.score=Math.round(o.score*0.6); }); }
+  out.sort((a,b)=>b.score-a.score || a.unk-b.unk);
+  return out;
+}
+
+function decide(A,C){
+  const dataAny = A.vd!=null || A.vi!=null || A.hp!=null || S.da || S.fap;
+  if(!dataAny) return {k:null};
+  const top=C[0];
+  if(top.score<60){
+    const enough = A.vd!=null && A.vi!=null && A.hp!=null;
+    return enough ? {k:"P0"} : {k:null, partial:true};
+  }
+  const second = C[1] && C[1].score>=75 && C[1].k!==top.k ? C[1].k : null;
+  return {k:top.k, second};
+}
+
+/* ---------------- render ---------------- */
+function pill(label,val,cls=""){ return `<div class="pill ${cls}">${label}<b>${val}</b></div>`; }
+function alertBox(cls,txt){ const i={bad:"!",warn:"!",ok:"✓",info:"i"}[cls]; return `<div class="alert ${cls}"><span class="i">${i}</span><div>${txt}</div></div>`; }
+
+let LAST={};
+function render(){
+  const c=calc(), A=axes(c), C=candidates(A), D=decide(A,C);
+  LAST={c,A,C,D};
+
+  // Paso 1
+  let h="";
+  if(c.pam!=null){
+    const cls = c.pam<40?"bad":(c.pam<50?"warn":"ok");
+    h+=pill("PAM", fmt(c.pam,0)+" mmHg", cls);
+    if(c.eg) h+=pill("PAM vs EG", c.pam<c.eg?"< EG":"≥ EG", c.pam<c.eg?"warn":"ok");
+  }
+  if(c.fc!=null) h+=pill("FC", fmt(c.fc,0)+" lpm", c.fc<80?"warn":"");
+  if(c.diur!=null) h+=pill("Diuresis", fmt(c.diur,1), c.diur<1?"warn":"ok");
+  if(c.lact!=null) h+=pill("Lactato", fmt(c.lact,1), c.lact>4?"warn":"");
+  $("outCirc").innerHTML = h || `<p class="note">Ingrese PAS y PAD para calcular la PAM.</p>`;
+  h="";
+  if(c.dSat!=null) h+=pill("SpO₂ pre − post", fmt(c.dSat,0)+" pts", c.dSat>=5?"bad":(c.dSat>=3?"warn":"ok"));
+  if(c.oi!=null) h+=pill("Índice de oxigenación", fmt(c.oi,1), c.oi>=25?"bad":(c.oi>=15?"warn":"ok"));
+  else if(c.osi!=null) h+=pill("ISO (por SpO₂)", fmt(c.osi,1), c.osi>=12?"bad":(c.osi>=8?"warn":"ok"));
+  $("outOx").innerHTML = h || `<p class="note">IO = MAP × FiO₂ ÷ PaO₂. Sin gasometría se calcula el ISO con la SpO₂ preductal.</p>`;
+
+  // Paso 2
+  const lvl = {normal:["Normal","ok"],leve:["Leve ↓","warn"],sig:["Significativa","bad"]};
+  h="";
+  if(c.tapse!=null) h+=pill("TAPSE", fmt(c.tapse,1)+" mm", c.tapse<6?"bad":(c.tapse<8?"warn":"ok"));
+  if(c.fac!=null) h+=pill("FAC VD", fmt(c.fac,0)+" %", c.fac<29?"bad":(c.fac<35?"warn":"ok"));
+  if(A.vd) h+=pill("Disfunción VD", lvl[A.vd][0], lvl[A.vd][1]);
+  $("outVD").innerHTML=h;
+  h="";
+  if(c.fe!=null) h+=pill("FE VI", fmt(c.fe,0)+" %", c.fe<45?"bad":(c.fe<55?"warn":"ok"));
+  if(c.gvi!=null) h+=pill("GVI", fmt(c.gvi,0)+" mL/kg/min", c.gvi<150?"bad":(c.gvi>300?"warn":"ok"));
+  if(A.vi) h+=pill("Disfunción VI", lvl[A.vi][0], lvl[A.vi][1]);
+  $("outVI").innerHTML=h;
+  h="";
+  if(c.psap!=null) h+=pill("PSAP", fmt(c.psap,0)+" mmHg");
+  if(c.ratio!=null) h+=pill("PSAP / PAS", fmt(c.ratio,2), c.ratio>=1?"bad":(c.ratio>=0.67?"warn":"ok"));
+  if(A.hp) h+=pill("Hipertensión pulmonar", A.hp==="si"?"Probable":"No evidente", A.hp==="si"?"bad":"ok");
+  $("outHP").innerHTML=h;
+
+  // Paso 3
+  const phMain=$("phMain");
+  if(!D.k){
+    phMain.innerHTML = `<div class="card">${alertBox("info", D.partial ? "Faltan datos para decidir. Complete al menos función del VD, función del VI y algún signo de HP (ductus, foramen, septum, IT o diferencia de SpO₂)." : "Ingrese los hallazgos ecocardiográficos del paso 2 para clasificar el fenotipo.")}</div>`;
+  } else {
+    const p=PH[D.k];
+    phMain.innerHTML = `<div class="ph" style="background:var(${p.col})"><div class="k">${D.k==="P0"?"Resultado":"Fenotipo "+p.n}${D.second?" · combinado":""}</div><h3>${p.name}</h3><p>${p.desc}</p>${D.second?`<p style="margin-top:8px"><b>También compatible:</b> ${PH[D.second].short}. Trate ambos componentes y priorice el que compromete más la perfusión.</p>`:""}</div>`;
+  }
+  const ax=[];
+  ax.push(pill("VD", A.vd?lvl[A.vd][0]:"sin datos", A.vd?lvl[A.vd][1]:""));
+  ax.push(pill("VI", A.vi?lvl[A.vi][0]:"sin datos", A.vi?lvl[A.vi][1]:""));
+  ax.push(pill("HP", A.hp==null?"sin datos":(A.hp==="si"?`Sí (${fmt(A.hpScore,1)})`:"No evidente"), A.hp==="si"?"bad":(A.hp?"ok":"")));
+  ax.push(pill("Ductus", {nr:"No restrictivo",r:"Restrictivo",c:"Cerrado"}[S.da]||"sin datos"));
+  $("axes").innerHTML = ax.join("") + (A.hpWhy?`<p class="note" style="flex-basis:100%">HP: ${esc(A.hpWhy)}</p>`:"");
+  $("cands").innerHTML = C.map(o=>{
+    const p=PH[o.k];
+    return `<div class="cand"><div class="dot" style="background:var(${p.col})">${p.n}</div><div class="body"><div class="t">${p.short}<span>${o.score}%</span></div><div class="bar"><i style="width:${o.score}%;background:var(${p.col})"></i></div><ul class="crit">${o.crit.map(([t,s])=>`<li class="${s}">${t}</li>`).join("")}</ul></div></div>`;
+  }).join("");
+
+  const ctx=[];
+  if(A.lvPattern) ctx.push(alertBox("bad","Cortocircuito ductal der→izq con FO izq→der y VI deprimido: el patrón sugiere que el flujo ductal sostiene la circulación sistémica por falla del VI, no HP primaria. <b>El iNO puede empeorar la situación.</b>"));
+  if(S.fase==="hipo" && c.fc!=null && c.fc<100) ctx.push(alertBox("info","Bradicardia sinusal durante la hipotermia: es esperable (12 veces más frecuente) y no debe tratarse por sí sola."));
+  if(S.fase==="recal") ctx.push(alertBox("warn","Recalentamiento: cae la RVS y sube la FC. Repita la eco; un gasto cardíaco alto en esta fase se asocia a RM anormal."));
+  if(c.pam!=null && c.pam>=50 && A.vd==="sig") ctx.push(alertBox("warn","PAM normal con VD deprimido: la presión no refleja el flujo. La vasoconstricción mantiene la cifra."));
+  if(c.lact!=null && c.lact>4) ctx.push(alertBox("info","Lactato alto: refleja sobre todo la agresión inicial. Al mejorar la perfusión puede subir transitoriamente por lavado; valore la tendencia."));
+  if(c.diur!=null && c.diur<1) ctx.push(alertBox("info","Oliguria: puede deberse a hipoperfusión, a lesión tubular por la asfixia o a la hipotermia. No la use sola para decidir inotrópicos."));
+  if(S.da==="c" && c.dSat!=null && c.dSat<3 && A.hp==="si") ctx.push(alertBox("info","Con el ductus cerrado no hay diferencia pre-posductal aunque exista HP grave."));
+  $("ctxAlerts").innerHTML = ctx.join("");
+
+  // Paso 4
+  const sel=$("phSel");
+  const active = S.phSel || D.k || "P0";
+  if(!sel.options.length){ Object.keys(PH).forEach(k=>{ const o=document.createElement("option"); o.value=k; o.textContent=(PH[k].n?PH[k].n+". ":"")+PH[k].short; sel.appendChild(o); }); sel.onchange=()=>{S.phSel=sel.value; render(); save();}; }
+  sel.value=active;
+  $("phSelNote").textContent = S.phSel && S.phSel!==D.k ? "Seleccionado manualmente; el motor sugiere: "+(D.k?PH[D.k].short:"datos insuficientes")+"." : (D.k?"Sugerido por el motor.":"Sin datos de eco: se muestra el abordaje general.");
+  const p=PH[active];
+  $("ivTitle").innerHTML = `<span class="dot" style="width:12px;height:12px;border-radius:50%;background:var(${p.col});display:inline-block"></span> ${p.short}`;
+  $("ivList").innerHTML = p.iv.map(([a,b])=>`<li>${a}<small>${b}</small></li>`).join("");
+  $("mgAlerts").innerHTML = mgAlerts(active,c,A).join("");
+
+  // Paso 5
+  renderDrugs(active,c,A);
+  const pesoHC = c.peso;
+  const hcD=num("hcDose")??0.5, hcN=num("hcN")??0;
+  const acum = hcD*hcN;
+  let hh = pill("Dosis", pesoHC?fmt(hcD*pesoHC,2)+" mg":"— (falta peso)");
+  hh += pill("Acumulada", fmt(acum,1)+" mg/kg", acum>=5.6?"bad":(acum>=4?"warn":"ok"));
+  if(hcD>0){ const left = Math.max(0, Math.floor((5.6-acum)/hcD)); hh += pill("Dosis hasta 5,6 mg/kg", acum>=5.6?"superado":String(left), acum>=5.6?"bad":""); }
+  $("outHC").innerHTML=hh;
+
+  // Paso 6
+  $("sumTxt").textContent = summary(c,A,D,active);
+}
+
+function mgAlerts(k,c,A){
+  const a=[];
+  const hipot = A.hipo===true || (c.pam!=null && c.pam<40);
+  const renal = (c.diur!=null && c.diur<1) || (c.creat!=null && c.creat>1.2);
+  if(S.soporte.includes("dopa")) a.push(alertBox("bad","Recibe dopamina: puede aumentar la RVP y la relación presión pulmonar/sistémica, y produce picos de PA. Considere cambiar a dobutamina o epinefrina a dosis baja según el fenotipo."));
+  if(["P2","P3","P6"].includes(k) && (hipot||renal)) a.push(alertBox("bad",`Milrinona <b>no recomendada ahora</b>: ${[hipot?"hipotensión":null,renal?"oliguria o creatinina alta (se acumula por vía renal)":null].filter(Boolean).join(" y ")}. Baja la presión diastólica y con ella la perfusión coronaria del VD.`));
+  if(S.soporte.includes("mil") && (hipot||renal)) a.push(alertBox("bad","Milrinona en curso con hipotensión u oliguria: riesgo de caída marcada de la diastólica (observado en hipotermia, n = 56)."));
+  if(k==="P6" || A.lvPattern) a.push(alertBox("bad","Disfunción del VI: evite el iNO y otros vasodilatadores pulmonares si el cortocircuito ductal der→izq sostiene el flujo sistémico."));
+  if(k==="P6" && S.soporte.includes("ino")) a.push(alertBox("bad","Está recibiendo iNO con fenotipo de disfunción del VI: reevalúe; puede empeorar la congestión venosa pulmonar y el IO."));
+  if(["P1","P2","P5","P0"].includes(k)) a.push(alertBox("warn","Hidrocortisona: dosis mínima y curso corto. En extended-CORTISoL, la dosis acumulada mayor se asoció a peor desenlace cognitivo (corte 5,6 mg/kg)."));
+  if(k==="P3" && S.hvd==="si") a.push(alertBox("warn","Hipertrofia del VD: el esmolol puede deprimir el miocardio. Úselo solo con monitorización estrecha y apoyo de cardiología."));
+  if(k==="P5") a.push(alertBox("warn","Si empeora pese al inotrópico: contacte temprano un centro con ECMO. Suspender la hipotermia es una decisión excepcional."));
+  if(S.fase==="recal") a.push(alertBox("info","Recalentamiento: reevalúe dosis; la caída de RVS puede requerir ajustar vasopresores y no perseguir gastos altos."));
+  return a;
+}
+
+/* ---------------- fármacos ---------------- */
+const DRUGS = [
+  {id:"dobu",n:"Dobutamina",u:"mcg/kg/min",min:2.5,max:7.5,def:5,conc:2000,cu:"mcg/mL",src:"Surak 2025",
+    rec:["P2","P3","P4","P5","P6"],cau:[],av:[]},
+  {id:"epi",n:"Epinefrina",u:"mcg/kg/min",min:0.01,max:0.04,def:0.02,conc:10,cu:"mcg/mL",src:"Surak 2025 (< 0,04)",
+    rec:["P2","P3","P4","P5","P6"],cau:[],av:[]},
+  {id:"nor",n:"Noradrenalina",u:"mcg/kg/min",min:0.05,max:0.5,def:0.1,conc:10,cu:"mcg/mL",src:"Rango de referencia",
+    rec:["P1","P0"],cau:["P6","P5"],av:[]},
+  {id:"vaso",n:"Vasopresina",u:"mU/kg/min",min:0.17,max:0.67,def:0.3,conc:100,cu:"mU/mL",src:"Rango de referencia",
+    rec:["P1","P0"],cau:["P6","P5"],av:[]},
+  {id:"mil",n:"Milrinona",u:"mcg/kg/min",min:0.25,max:0.75,def:0.33,conc:200,cu:"mcg/mL",src:"Rango de referencia; sin bolo",
+    rec:[],cau:["P2","P3","P6"],av:["P1","P4","P5","P0"]},
+  {id:"pge",n:"Alprostadil (PGE₁)",u:"mcg/kg/min",min:0.01,max:0.1,def:0.03,conc:5,cu:"mcg/mL",src:"Rango de referencia; reapertura 0,05–0,1",
+    rec:["P3","P4","P6"],cau:["P1","P2"],av:[]}
+];
+function renderDrugs(k,c,A){
+  const box=$("drugs");
+  if(!box.dataset.built){
+    box.innerHTML = `<h3>Infusiones continuas <span class="tag" id="drugPeso"></span></h3>` + DRUGS.map(d=>`
+      <div class="drug" id="dr_${d.id}">
+        <div class="hd">${d.n} <span class="chip" id="ch_${d.id}"></span><span class="rng">${String(d.min).replace(".",",")}–${String(d.max).replace(".",",")} ${d.u}</span></div>
+        <div class="grid" style="margin-top:8px">
+          <label class="f">Dosis <span class="u">${d.u}</span><input type="number" inputmode="decimal" step="any" id="dd_${d.id}" value="${d.def}"></label>
+          <label class="f">Concentración <span class="u">${d.cu}</span><input type="number" inputmode="decimal" step="any" id="dc_${d.id}" value="${d.conc}"></label>
+        </div>
+        <div style="margin-top:8px" id="dr_out_${d.id}"></div>
+        <p class="note" style="margin-top:4px">${d.src}</p>
+      </div>`).join("") + `<div class="drug"><div class="hd">iNO <span class="chip" id="ch_ino"></span><span class="rng">20 ppm</span></div><p class="note">Dosis inicial habitual 20 ppm; evaluar respuesta en 30–60 min por IO o SpO₂ preductal.</p></div>`;
+    DRUGS.forEach(d=>{ ["dd_","dc_"].forEach(p=>$(p+d.id).addEventListener("input",()=>render())); });
+    box.dataset.built="1";
+  }
+  $("drugPeso").textContent = c.peso? `Peso ${fmt(c.peso,2)} kg` : "Falta el peso";
+  const hipot = A.hipo===true || (c.pam!=null && c.pam<40);
+  const renal = (c.diur!=null && c.diur<1) || (c.creat!=null && c.creat>1.2);
+  DRUGS.forEach(d=>{
+    const dose=num("dd_"+d.id), conc=num("dc_"+d.id), ch=$("ch_"+d.id);
+    let cls="", txt="";
+    if(d.rec.includes(k)){cls="rec";txt="Fenotipo"}
+    if(d.cau.includes(k)){cls="cau";txt="Cautela"}
+    if(d.av.includes(k)){cls="av";txt="No indicada"}
+    if(d.id==="mil" && (hipot||renal) && cls!=="av"){cls="av";txt="Contraindicada ahora"}
+    ch.className="chip "+cls; ch.textContent=txt;
+    let o="";
+    if(c.peso && dose!=null && conc){
+      const rate = dose*c.peso*60/conc;
+      const per1 = conc/(c.peso*60);
+      const out = dose<d.min||dose>d.max;
+      o = `<div class="res">${fmt(rate,2)} mL/h <small>· 1 mL/h = ${fmt(per1,3)} ${d.u}</small></div>`;
+      if(out) o += `<p class="note" style="color:var(--warn)">Fuera del rango de referencia (${d.min}–${d.max}).</p>`;
+      if(d.id==="epi" && dose>=0.04) o += `<p class="note" style="color:var(--bad)">≥ 0,04 mcg/kg/min: deja de ser dosis baja; riesgo de picos de PA y aumento de RVP.</p>`;
+    } else o = `<p class="note">Ingrese peso, dosis y concentración.</p>`;
+    $("dr_out_"+d.id).innerHTML=o;
+  });
+  const ci=$("ch_ino");
+  if(k==="P6"||A.lvPattern){ci.className="chip av";ci.textContent="Evitar";}
+  else if(["P1","P2","P3","P4"].includes(k)){ci.className="chip rec";ci.textContent="Fenotipo";}
+  else {ci.className="chip";ci.textContent="";}
+}
+
+/* ---------------- resumen ---------------- */
+function summary(c,A,D,active){
+  const L=[];
+  const fase={hipo:"hipotermia",recal:"recalentamiento",normo:"normotermia"}[S.fase]||"fase no indicada";
+  const sar={leve:"leve",mod:"moderada",grave:"grave"}[S.sarnat];
+  L.push(`EVALUACIÓN HEMODINÁMICA – EHI`);
+  L.push(`${c.peso?fmt(c.peso,2)+" kg · ":""}${num("horas")!=null?fmt(num("horas"),0)+" h de vida · ":""}${fase}${sar?" · EHI "+sar:""}`);
+  const cl=[];
+  if(c.pam!=null) cl.push(`PAM ${fmt(c.pam,0)}${c.pas!=null&&c.pad!=null?` (${fmt(c.pas,0)}/${fmt(c.pad,0)})`:""}`);
+  if(c.fc!=null) cl.push(`FC ${fmt(c.fc,0)}`);
+  if(c.diur!=null) cl.push(`diuresis ${fmt(c.diur,1)} mL/kg/h`);
+  if(c.lact!=null) cl.push(`lactato ${fmt(c.lact,1)}`);
+  if(c.pre!=null) cl.push(`SpO₂ ${fmt(c.pre,0)}${c.post!=null?"/"+fmt(c.post,0):""}`);
+  if(c.oi!=null) cl.push(`IO ${fmt(c.oi,1)}`); else if(c.osi!=null) cl.push(`ISO ${fmt(c.osi,1)}`);
+  if(cl.length) L.push("Clínica: "+cl.join(", "));
+  const ec=[];
+  if(c.tapse!=null) ec.push(`TAPSE ${fmt(c.tapse,1)} mm`);
+  if(c.fac!=null) ec.push(`FAC VD ${fmt(c.fac,0)} %`);
+  if(c.fe!=null) ec.push(`FE VI ${fmt(c.fe,0)} %`);
+  if(c.gvi!=null) ec.push(`GVI ${fmt(c.gvi,0)} mL/kg/min`);
+  if(S.da) ec.push("DA "+{nr:"no restrictivo",r:"restrictivo",c:"cerrado"}[S.da]+(S.dadir?" "+{id:"I→D",bi:"bidireccional",di:"D→I"}[S.dadir]:""));
+  if(S.fo) ec.push("FO "+{id:"I→D",bi:"bidireccional",di:"D→I"}[S.fo]);
+  if(S.septo) ec.push("septum "+{red:"redondo",apl:"aplanado",abo:"abombado"}[S.septo]);
+  if(c.psap!=null) ec.push(`PSAP ${fmt(c.psap,0)} mmHg${c.ratio!=null?" ("+fmt(c.ratio,2)+" de PAS)":""}`);
+  if(S.fap==="no") ec.push("sin flujo anterógrado pulmonar");
+  if(ec.length) L.push("Eco: "+ec.join(", "));
+  L.push(`Ejes: VD ${A.vd||"s/d"} · VI ${A.vi||"s/d"} · HP ${A.hp==null?"s/d":(A.hp==="si"?"sí":"no")}`);
+  if(D.k) L.push(`Fenotipo: ${PH[D.k].short}${D.second?" + "+PH[D.second].short:""}`);
+  if(active && active!==D.k) L.push(`Fenotipo tratado (manual): ${PH[active].short}`);
+  if(S.soporte.length) L.push("Soporte actual: "+S.soporte.map(s=>({dopa:"dopamina",dobu:"dobutamina",epi:"epinefrina",nor:"noradrenalina",vaso:"vasopresina",mil:"milrinona",ino:"iNO",pge:"PGE1",hc:"hidrocortisona"}[s])).join(", "));
+  L.push("Plan:");
+  PH[active].iv.forEach(([a],i)=>L.push(`  ${i+1}. ${a}`));
+  L.push("Reevaluar con eco: a las 24 h, tras cada cambio de fármaco y al recalentar.");
+  L.push("Ref.: Surak et al., J Perinatol 2025 (Fig. 2).");
+  return L.join("\n");
+}
+
+/* ---------------- utilidades ---------------- */
+function toast(t){ const el=$("toast"); el.textContent=t; el.classList.add("show"); setTimeout(()=>el.classList.remove("show"),1600); }
+$("btnCopy").onclick=async()=>{
+  const t=$("sumTxt").textContent;
+  try{ await navigator.clipboard.writeText(t); toast("Copiado"); }
+  catch(e){ const r=document.createRange(); r.selectNodeContents($("sumTxt")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast("Seleccionado: copie manualmente"); }
+};
+$("btnReset").onclick=()=>{
+  NUM_IDS.forEach(id=>{ const el=$(id); if(el) el.value = el.defaultValue; });
+  DRUGS.forEach(d=>{ $("dd_"+d.id).value=d.def; $("dc_"+d.id).value=d.conc; });
+  Object.keys(S).forEach(k=>S[k]=Array.isArray(S[k])?[]:null);
+  try{ sessionStorage.removeItem("ehi-state"); }catch(e){}
+  syncSeg(); go(0); toast("Caso nuevo");
+};
+function save(){
+  try{ const v={}; NUM_IDS.forEach(id=>{ const el=$(id); if(el) v[id]=el.value; }); sessionStorage.setItem("ehi-state", JSON.stringify({S,v})); }catch(e){}
+}
+function load(){
+  try{ const raw=sessionStorage.getItem("ehi-state"); if(!raw) return; const o=JSON.parse(raw); Object.assign(S,o.S||{}); Object.entries(o.v||{}).forEach(([id,val])=>{ const el=$(id); if(el) el.value=val; }); }catch(e){}
+}
+function netState(){ const n=$("net"); const on=navigator.onLine; n.textContent = on? "en línea":"sin conexión"; n.classList.toggle("on",on); }
+addEventListener("online",netState); addEventListener("offline",netState);
+
+load(); syncSeg(); netState(); go(0);
+
+/* Modo sin conexión: se activa solo si sw.js está en la misma carpeta del repositorio. */
+if("serviceWorker" in navigator && location.protocol==="https:"){
+  fetch("sw.js",{method:"HEAD",cache:"no-store"}).then(r=>{ if(r.ok) navigator.serviceWorker.register("sw.js"); }).catch(()=>{});
+}
+</script>
+</body>
+</html>
