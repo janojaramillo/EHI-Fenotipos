@@ -1,6 +1,6 @@
 /* CDSS Fenotipos EHI: guarda la app en el teléfono para usarla sin internet.
    Al publicar un cambio en index.html, suba la versión (ehi-v1.0.1, ehi-v1.0.2...). */
-const VERSION = "ehi-v1.0.0";
+const VERSION = "ehi-v1.1.0";
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(["./", "./index.html"])).then(() => self.skipWaiting()));
 });

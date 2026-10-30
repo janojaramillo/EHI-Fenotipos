@@ -237,7 +237,7 @@ pre.sum{white-space:pre-wrap;font:500 12.5px var(--mono);background:var(--bg);bo
     <div class="seglab">Aurícula izquierda dilatada / congestión venosa pulmonar</div>
     <div class="seg" data-k="ai"><button data-v="no">No</button><button data-v="si">Sí</button></div>
     <div class="out" id="outVI"></div>
-    <p class="note">GVI = π × (TSVI/2)² × VTI × FC ÷ peso. Usa la FC del paso 1.</p>
+    <p class="note">GVI = π × (TSVI/2)² × VTI × FC ÷ peso. Usa la FC del paso 1. El GVI informa el flujo, no la contractilidad: la función del VI se define por la FE o la impresión cualitativa.</p>
   </div>
 
   <div class="card">
@@ -339,7 +339,7 @@ pre.sum{white-space:pre-wrap;font:500 12.5px var(--mono);background:var(--bg);bo
       <tr><td>TAPSE</td><td>&lt; 6 mm = disfunción significativa</td><td>Giesinger 2019 (muerte o RM anormal: S 78 %, E 81 %, AUC 0,83)</td></tr>
       <tr><td>FAC del VD</td><td>&lt; 29 % = significativa; 29–35 % = leve</td><td>Giesinger 2019 (S 83 %, E 84 %, AUC 0,88); 35 % es el límite adulto</td></tr>
       <tr><td>FE del VI</td><td>&lt; 45 % significativa; 45–54 % leve</td><td>Convención de eco funcional; no del artículo</td></tr>
-      <tr><td>GVI</td><td>&lt; 150 mL/kg/min bajo</td><td>Rango neonatal habitual 150–300; no del artículo</td></tr>
+      <tr><td>GVI</td><td>&lt; 150 mL/kg/min bajo</td><td>Rango neonatal habitual 150–300; no del artículo. Indica flujo, no función: no define el eje VI</td></tr>
       <tr><td>PSAP/PAS</td><td>≥ 0,67 HP; ≥ 1 suprasistémica</td><td>Convención de eco funcional</td></tr>
       <tr><td>SpO₂ pre − post</td><td>≥ 5 puntos</td><td>Convención clínica; ausente si el DA está cerrado</td></tr>
       <tr><td>PAM</td><td>≥ 50 mmHg</td><td>Lee 2017: mejor autorregulación por NIRS. Observacional, no meta validada</td></tr>
@@ -369,7 +369,7 @@ pre.sum{white-space:pre-wrap;font:500 12.5px var(--mono);background:var(--bg);bo
     </ol>
   </details>
   <div class="disc">Herramienta de apoyo a la decisión. No sustituye el juicio clínico, la ecocardiografía completa ni la valoración por cardiología pediátrica cuando hay sospecha de cardiopatía estructural.</div>
-  <p class="foot">Dr. Jano Jaramillo — Médico Pediatra y Neonatólogo · Posgrado en Trastornos del Aprendizaje<br>Sala de Neonatología · Hospital Dr. Cecilio Castillero · Chitré<br><span style="font-family:var(--mono)">v1.0 · 2026-10</span></p>
+  <p class="foot">Dr. Jano Jaramillo — Médico Pediatra y Neonatólogo · Posgrado en Trastornos del Aprendizaje<br>Sala de Neonatología · Hospital Dr. Cecilio Castillero · Chitré<br><span style="font-family:var(--mono)">v1.1 · 2026-10</span></p>
 </section>
 
 </main>
@@ -466,7 +466,7 @@ function axes(c){
   // VI
   let vi=null, viWhy=[];
   if(c.fe!=null){ viWhy.push(`FE ${fmt(c.fe,0)} %`); vi = c.fe<45?"sig":(c.fe<55?"leve":"normal"); }
-  if(c.gvi!=null){ viWhy.push(`GVI ${fmt(c.gvi,0)}`); if(c.gvi<150) vi=worst(vi,"sig"); else vi=worst(vi,"normal"); }
+  /* El GVI mide flujo, no contractilidad: puede estar bajo por precarga baja (HP, interdependencia) o por hipotermia. No define el eje VI. */
   if(vi==null && S.viq){ vi=S.viq; viWhy.push("impresión cualitativa"); }
   A.vi=vi; A.viWhy=viWhy.join(" · ");
   // HP
@@ -658,6 +658,7 @@ function render(){
   if(A.lvPattern) ctx.push(alertBox("bad","Cortocircuito ductal der→izq con FO izq→der y VI deprimido: el patrón sugiere que el flujo ductal sostiene la circulación sistémica por falla del VI, no HP primaria. <b>El iNO puede empeorar la situación.</b>"));
   if(S.fase==="hipo" && c.fc!=null && c.fc<100) ctx.push(alertBox("info","Bradicardia sinusal durante la hipotermia: es esperable (12 veces más frecuente) y no debe tratarse por sí sola."));
   if(S.fase==="recal") ctx.push(alertBox("warn","Recalentamiento: cae la RVS y sube la FC. Repita la eco; un gasto cardíaco alto en esta fase se asocia a RM anormal."));
+  if(c.gvi!=null && c.gvi<150){ const why = A.vi==="sig" ? "compatible con la disfunción del VI." : (A.hp==="si"||A.vd==="sig" ? "con FE conservada sugiere precarga baja del VI por HP o falla del VD (interdependencia), no falla del VI." : (S.fase==="hipo" ? "puede ser fisiológico en hipotermia por la bradicardia y el menor consumo; correlacione con lactato y diuresis." : "con FE conservada: revise precarga y volemia.")); ctx.push(alertBox("warn",`Gasto del VI bajo (${fmt(c.gvi,0)} mL/kg/min): ${why}`)); }
   if(c.pam!=null && c.pam>=50 && A.vd==="sig") ctx.push(alertBox("warn","PAM normal con VD deprimido: la presión no refleja el flujo. La vasoconstricción mantiene la cifra."));
   if(c.lact!=null && c.lact>4) ctx.push(alertBox("info","Lactato alto: refleja sobre todo la agresión inicial. Al mejorar la perfusión puede subir transitoriamente por lavado; valore la tendencia."));
   if(c.diur!=null && c.diur<1) ctx.push(alertBox("info","Oliguria: puede deberse a hipoperfusión, a lesión tubular por la asfixia o a la hipotermia. No la use sola para decidir inotrópicos."));
